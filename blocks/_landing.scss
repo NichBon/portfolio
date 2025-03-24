@@ -1,0 +1,6 @@
+@use "./colors" as c;
+
+#landing {
+    background-color: c.$background-light;
+    color: c.$text-dark;
+}

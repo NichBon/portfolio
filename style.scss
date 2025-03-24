@@ -1,0 +1,9 @@
+@use './blocks/colors' as c;
+
+@use './blocks/containers';
+@use './blocks/navigation';
+@use './blocks/landing';
+
+body {
+    background-color: c.$background-dark;
+}

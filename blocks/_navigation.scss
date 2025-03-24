@@ -1,0 +1,10 @@
+@use "./colors" as c;
+
+nav {
+    position: sticky;
+    top: 0;
+}
+
+a {
+    color: c.$text-light;
+}

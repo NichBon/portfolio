@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+
+    &__nav {
+        justify-content: flex-end;
+        padding: 10px;
+    }
+
+    &__link {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    &__landing {
+        justify-content: flex-start;
+        flex-direction: column;
+        padding-left: 20%;
+    }
+
+    &__title {
+        justify-content: flex-start;
+    }
+
+    &__heading {
+        justify-content: center;
+    }
+
+    &__content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    &__item {
+        justify-content: center;
+        align-items: center;
+    }
+}
