@@ -3,6 +3,7 @@
 @use './blocks/containers';
 @use './blocks/navigation';
 @use './blocks/landing';
+@use './blocks/skills';
 
 body {
     background-color: c.$background-dark;
