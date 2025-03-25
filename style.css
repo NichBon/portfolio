@@ -15,12 +15,18 @@
 .container__heading {
   justify-content: center;
 }
-.container__content {
+.container--row {
   flex-direction: row;
+}
+.container--column {
+  flex-direction: column;
+}
+.container__content {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .container__item {
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -37,7 +43,6 @@ a {
 .container__landing {
   background-color: #B2BEB5;
   justify-content: flex-start;
-  flex-direction: column;
   padding-left: 20%;
   width: 90%;
   padding-bottom: 10px;

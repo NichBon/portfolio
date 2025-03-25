@@ -19,13 +19,21 @@
         justify-content: center;
     }
 
-    &__content {
+    &--row {
         flex-direction: row;
+    }
+
+    &--column {
+        flex-direction: column;
+    }
+
+    &__content {
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
 
     &__item {
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }

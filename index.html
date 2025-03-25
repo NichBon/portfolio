@@ -12,6 +12,9 @@
 
     <!-- Scripting -->
     <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Rammetto+One&display=swap" rel="stylesheet">
 
 </head>
 
@@ -40,7 +43,7 @@
 
     <section id="landing">
         <div class="container container__content container--small">
-            <div class="container container__landing">
+            <div class="container container__landing container--column">
                 <div class="container container__title">
                     <h1>Nick Bonett</h1>
                 </div>
@@ -55,7 +58,7 @@
         <div class="container container__heading">
             <h2>About</h2>
         </div>
-        <div class="container container__content">
+        <div class="container container__content container--row">
             <div class="container container__item">
                 Ex-Educator (STEM), Problem Solver, Optimiser, Food Enjoyer.
             </div>
@@ -63,7 +66,10 @@
                 Bachelor of Science - Mathematical Modelling
             </div>
             <div class="container container__item">
-                Bachelor of Science - Mathematical Modelling
+                <!-- <form method="get" action="resume-placeholder.pdf">
+                    <button type="submit">DOWNLOAD MY RESUME</button>
+                </form> -->
+                <a href="resume-placeholder.pdf" download>DOWNLOAD MY RESUME</a>
             </div>
         </div>
     </section>
@@ -73,7 +79,7 @@
             <h2>Skills</h2>
         </div>
 
-        <div class="container container__content">
+        <div class="container container__content container--row">
             <div class="container container__item">
                 <i class="fa-brands fa-html5"></i>
             </div>
@@ -95,19 +101,22 @@
             <h4>Future Training</h4>
         </div>
 
-        <div class="container container__content">
+        <div class="container container__content container--row">
             <div class="container container__item">
-                <i class="fa-brands fa-react"></i>
+                <i class="fa-brands fa-react" alt="react"></i>
             </div>
-            <div class="container container__item">
-                <i class="fa-brands fa-s"></i>
-                <i class="fa-brands fa-q"></i>
-                <i class="fa-brands fa-l"></i>
+            <div class="container container__item container--row">
+                <div>
+                    <i class="fa-solid fa-database" alt="'SQL"></i>
+                </div>
+                <div>
+                    SQL
+                </div>
             </div>
-            <div class="container container__item">
+            <div class="container container__item container--column">
                 <i class="fa-brands fa-java"></i>
             </div>
-            <div class="container container__item">
+            <div class="container container__item container--column">
                 <i class="fa-brands fa-aws"></i>
             </div>
         </div>
