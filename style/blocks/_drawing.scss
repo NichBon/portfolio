@@ -1,0 +1,44 @@
+@use "../base/colors" as c;
+@use '../base/variables' as *;
+
+.drawing-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 80vw;
+    height: 70vh;
+    margin-bottom: 20px;
+    background-color: $color-bg;
+    border: 1px solid rgba($color-text, 0.1);
+
+    canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    #redraw-btn {
+        opacity: 0;
+        position: relative;
+        bottom: 10%;
+        right: -80%;
+        padding: 8px 16px;
+        font-size: 15px;
+        background-color: rgba($color-text, 0.05);
+        color: $color-muted;
+        border: 1px solid rgba($color-text, 0.2);
+        border-radius: $border-radius;
+        cursor: pointer;
+        transition: $transition-fast;
+        pointer-events: none;
+
+        &:hover {
+            background-color: rgba($color-text, 0.15);
+            color: $color-text;
+        }
+
+        &.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+}

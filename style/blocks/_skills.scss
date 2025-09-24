@@ -1,0 +1,17 @@
+@use "../base/colors" as c;
+@use '../base/variables' as *;
+
+i {
+    font-size: 40px;
+}
+
+.skills-item {
+    font-size: 2rem;
+    color: $color-accent;
+    transition: $transition-fast;
+
+    &:hover {
+        transform: scale(1.1);
+        color: lighten($color-accent, 10%);
+    }
+}

@@ -1,12 +1,12 @@
+
 const canvas = document.getElementById('tree-canvas');
 const ctx = canvas.getContext('2d');
 const branchQueue = [];
+const btn = document.getElementById('redraw-btn');
 
 function resizeCanvas() {
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = window.innerWidth * dpr * 0.8;
-    canvas.height = window.innerHeight * dpr * 0.7;
-    ctx.scale(dpr, dpr);
+    canvas.height = window.innerHeight * 0.7;
+    canvas.width = window.innerWidth * 0.8;
 }
 
 function buildBranches(x, y, length, angle, depth) {
@@ -48,14 +48,18 @@ function drawBranches(branches, delay = 100) {
     let i = 0;
 
     function drawNext() {
-        if (i >= branches.length) return;
+        if (i >= branches.length) {
+            branchQueue.length = 0;
+            btn.classList.add('visible');
+            return;
+        }
 
         const { x, y, endX, endY, depth } = branches[i];
         ctx.beginPath();
         ctx.moveTo(x, y);
         ctx.lineTo(endX, endY);
-        ctx.lineWidth = depth === 1 ? 3 : depth;
-        ctx.strokeStyle = depth < 2 ? "pink" : depth < 3 ? "green" : depth < 5 ? "SaddleBrown" : "black";
+        ctx.lineWidth = depth === 1 ? 4 : depth;
+        ctx.strokeStyle = depth < 2 ? "pink" : depth < 4 ? "green" : depth < 6 ? "#6d2002" : "#381000";
         ctx.stroke();
 
         i++;
@@ -71,6 +75,14 @@ function drawTree() {
     console.log(branchQueue);
     drawBranches(branchQueue, drawDelay);
 }
+
+document.getElementById('redraw-btn').addEventListener('click', () => {
+    if (branchQueue.length === 0) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        btn.classList.remove('visible');
+        drawTree();
+    }
+});
 
 resizeCanvas();
 const startX = canvas.width / 2;

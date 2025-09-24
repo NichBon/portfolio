@@ -41,109 +41,108 @@
         </nav>
     </header>
 
-    <section id="drawing" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        <canvas id="tree-canvas" width="800px" height="600px" style="border: 1px solid red"></canvas>
+
+    <section id="drawing">
+        <div class="drawing-wrapper">
+            <div class="container container__canvas">
+                <canvas id="tree-canvas"></canvas>
+            </div>
+            <button id="redraw-btn">New Tree</button>
+        </div>
     </section>
 
-    <section id="landing">
-        <div class="container container__content container--small">
-            <div class="container container__landing container--column">
+    <div class="container container__bodycolumn">
+        <section id="landing">
+            <div class="container container__content container--centered-80 container--column">
                 <div class="container container__title">
                     <h1>Nick Bonett</h1>
                 </div>
                 <div class="container container__title">
-                    <h3>Trainee Developer</h3>
+                    <h3>Full Stack Developer</h3>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about">
-        <div class="container container__heading">
-            <h2>About</h2>
-        </div>
-        <div class="container container__content container--row">
-            <div class="container container__item">
-                Ex-Educator (STEM), Problem Solver, Optimiser, Food Enjoyer.
+        <section id="about">
+            <div class="container container__heading">
+                <h2>About</h2>
             </div>
-            <div class="container container__item">
-                Bachelor of Science - Mathematical Modelling
-            </div>
-            <div class="container container__item">
-                <!-- <form method="get" action="resume-placeholder.pdf">
+            <div class="container container__content container--row">
+                <div class="container container__item">
+                    Ex-Educator (STEM), Problem Solver, Optimiser, Food Enjoyer.
+                </div>
+                <div class="container container__item">
+                    Bachelor of Science - Mathematical Modelling
+                </div>
+                <div class="container container__item">
+                    <!-- <form method="get" action="resume-placeholder.pdf">
                     <button type="submit">DOWNLOAD MY RESUME</button>
                 </form> -->
-                <a href="resume-placeholder.pdf" download>DOWNLOAD MY RESUME</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container container__heading">
-            <h2>Skills</h2>
-        </div>
-
-        <div class="container container__content container--row">
-            <div class="container container__item">
-                <i class="fa-brands fa-html5"></i>
-            </div>
-            <div class="container container__item">
-                <i class="fa-brands fa-css"></i>
-            </div>
-            <div class="container container__item">
-                <i class="fa-brands fa-sass"></i>
-            </div>
-            <div class="container container__item">
-                <i class="fa-brands fa-js"></i>
-            </div>
-            <div class="skills-item container">
-                <i class="fa-brands fa-python"></i>
-            </div>
-        </div>
-
-        <div class="container container__heading">
-            <h4>Future Training</h4>
-        </div>
-
-        <div class="container container__content container--row">
-            <div class="container container__item">
-                <i class="fa-brands fa-react" alt="react"></i>
-            </div>
-            <div class="container container__item container--row">
-                <div>
-                    <i class="fa-solid fa-database" alt="'SQL"></i>
-                </div>
-                <div>
-                    SQL
+                    <a href="resume-placeholder.pdf" download>DOWNLOAD MY RESUME</a>
                 </div>
             </div>
-            <div class="container container__item container--column">
-                <i class="fa-brands fa-java"></i>
-            </div>
-            <div class="container container__item container--column">
-                <i class="fa-brands fa-aws"></i>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="portfolio">
-        <div class="container container__heading">
-            <h2>Portfolio</h2>
-        </div>
-        </div>
-        <div class="container container__content">
-            <div class="container container__item "></div>
-        </div>
-    </section>
+        <section id="skills">
+            <div class="container container__heading">
+                <h2>Skills</h2>
+            </div>
 
-    <section id="contact">
-        <div class="container container__heading">
-            <h2>Contact</h2>
-        </div>
-        <div class="container container__content">
-            <div class="container container__item"></div>
-        </div>
-    </section>
+            <div class="container container__content container--row">
+                <div class="container container__item">
+                    <i class="fa-brands fa-html5"></i>
+                </div>
+                <div class="container container__item">
+                    <i class="fa-brands fa-css"></i>
+                </div>
+                <div class="container container__item">
+                    <i class="fa-brands fa-sass"></i>
+                </div>
+                <div class="container container__item">
+                    <i class="fa-brands fa-js"></i>
+                </div>
+                <div class="container container__item">
+                    <i class="fa-brands fa-python"></i>
+                </div>
+                <div class="container container__item">
+                    <i class="fa-brands fa-react" alt="react"></i>
+                </div>
+                <div class="container container__item container--row">
+                    <div>
+                        <i class="fa-solid fa-database" alt="'SQL"></i>
+                    </div>
+                    <div>
+                        SQL
+                    </div>
+                </div>
+                <div class="container container__item container--column">
+                    <i class="fa-brands fa-java"></i>
+                </div>
+                <div class="container container__item container--column">
+                    <i class="fa-brands fa-aws"></i>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="portfolio">
+            <div class="container container__heading">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="container container__content">
+                <div class="container container__item "></div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container container__heading">
+                <h2>Contact</h2>
+            </div>
+            <div class="container container__content">
+                <div class="container container__item"></div>
+            </div>
+        </section>
+    </div>
 
     <footer>
         <div class="container container__content">

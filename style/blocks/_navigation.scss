@@ -1,4 +1,5 @@
-@use "./colors" as c;
+@use "../base/colors" as c;
+@use '../base/variables' as *;
 
 nav {
     position: sticky;

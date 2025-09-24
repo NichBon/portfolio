@@ -1,10 +1,21 @@
-@use './blocks/colors' as c;
+@use './style/base/colors' as c;
+@use './style/base/variables' as v;
 
-@use './blocks/containers';
-@use './blocks/navigation';
-@use './blocks/landing';
-@use './blocks/skills';
+@use './style/blocks/containers';
+@use './style/blocks/navigation';
+@use './style/blocks/landing';
+@use './style/blocks/skills';
+@use './style/blocks/drawing';
 
 body {
-    background-color: c.$background-dark;
+    background-color: v.$color-bg;
+    color: v.$color-text;
+    font-family: v.$font-secondary;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
 }

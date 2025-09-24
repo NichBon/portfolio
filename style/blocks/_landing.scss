@@ -1,12 +1,10 @@
-@use "./colors" as c;
+@use "../base/colors" as c;
 
 .container {
     &__landing {
-        background-color: c.$background-light;
         justify-content: flex-start;
         padding-left: 20%;
         width: 90%;
-        padding-bottom: 10px;
     }
 
     &--small {
