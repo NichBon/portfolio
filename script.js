@@ -1,7 +1,91 @@
+const canvas = document.getElementById('tree-canvas');
+const ctx = canvas.getContext('2d');
+const branchQueue = [];
+
+function resizeCanvas() {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr * 0.8;
+    canvas.height = window.innerHeight * dpr * 0.7;
+    ctx.scale(dpr, dpr);
+}
+
+function buildBranches(x, y, length, angle, depth) {
+    if (depth === 0 || length < 2) return;
+
+    const endX = x + length * Math.cos(angle);
+    const endY = y + length * Math.sin(angle);
+
+    branchQueue.push({ x, y, endX, endY, depth })
+
+    var seed = Math.floor(Math.random() * 15)
+    if (seed >= 11) {
+        buildBranches(endX, endY, length * 0.7, angle - Math.PI / 6, depth - 1);
+        buildBranches(endX, endY, length * 0.7, angle + Math.PI / 6, depth - 1);
+        buildBranches(endX, endY, length * 0.7, angle, depth - 1);
+    } else if (seed >= 6 || depth === 10) {
+        buildBranches(endX, endY, length * 0.7, angle - Math.PI / 6, depth - 1);
+        buildBranches(endX, endY, length * 0.7, angle + Math.PI / 6, depth - 1);
+        if (depth > 3 && seed >= 9) {
+            buildBranches(endX, endY, length * 0.7 ** 5, angle - Math.PI * 2 / 3, 4);
+            buildBranches(endX, endY, length * 0.7 ** 5, angle + Math.PI * 2 / 3, 4);
+        }
+    } else if (seed >= 3) {
+        buildBranches(endX, endY, length * 0.7, angle + Math.PI / 6, depth - 1);
+        if (depth > 3) {
+            buildBranches(endX, endY, length * 0.7 ** 5, angle - Math.PI / 6, 4);
+            buildBranches(endX, endY, length * 0.7 ** 5, angle + Math.PI * 2 / 3, 4);
+        }
+    } else if (seed >= 0) {
+        buildBranches(endX, endY, length * 0.7, angle - Math.PI / 6, depth - 1);
+        if (depth > 3) {
+            buildBranches(endX, endY, length * 0.7 ** 5, angle + Math.PI / 6, 4);
+            buildBranches(endX, endY, length * 0.7 ** 5, angle - Math.PI * 2 / 3, 4);
+        }
+    }
+}
+
+function drawBranches(branches, delay = 100) {
+    let i = 0;
+
+    function drawNext() {
+        if (i >= branches.length) return;
+
+        const { x, y, endX, endY, depth } = branches[i];
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(endX, endY);
+        ctx.lineWidth = depth === 1 ? 3 : depth;
+        ctx.strokeStyle = depth < 2 ? "pink" : depth < 3 ? "green" : depth < 5 ? "SaddleBrown" : "black";
+        ctx.stroke();
+
+        i++;
+        setTimeout(drawNext, depth ** 2 / 2);
+    }
+
+    drawNext();
+}
+
+function drawTree() {
+    buildBranches(startX, startY, initialLength, initialAngle, maxDepth);
+    branchQueue.sort((a, b) => b.depth - a.depth);
+    console.log(branchQueue);
+    drawBranches(branchQueue, drawDelay);
+}
+
+resizeCanvas();
+const startX = canvas.width / 2;
+const startY = canvas.height;
+const initialLength = canvas.height / 3.33;
+const initialAngle = -Math.PI / 2;
+const maxDepth = 10;
+const drawDelay = 25;
+
+
+drawTree();
 
 // create a collection of vectors to draw each time rendered from the camera perspective?
 // How do I convert a 3d representation to a 2d one?
-// How do I rotate the camera view? 
+// How do I rotate the camera view?
 // Should this be done with a parametric representation instead of vectors?
 // aim for 360 frames? 1 degree of rotation per frame
 // line width should be based on depth from camera (z axis?)
@@ -12,7 +96,7 @@
 // problem is rotating around the trunk makes each frame relative to the trunk not the camera
 // where is the camera? Offset from tree? Offset from middle of canvas?
 // I need to generate the tree first anyway, then figure out the camera offsets
-// 
+//
 
 // object {depth, [branches]}
 // each iteration draw branch
@@ -21,44 +105,9 @@
 // this could be randomised and just iterate through previous branches
 // do I randomise directions or have it fixed?
 // drawing isn't smooth? do I care? future problem?
-// 
+//
 
-const canvas = document.getElementById('tree-canvas');
-const ctx = canvas.getContext('2d');
-
-function drawBranch(x, y, length, angle, depth) {
-    if (depth === 0 || length < 2) { // Base case
-        return;
-    }
-
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    const endX = x + length * Math.cos(angle);
-    const endY = y + length * Math.sin(angle);
-    ctx.lineTo(endX, endY);
-    ctx.lineWidth = depth;
-    // create color depth object to reference (WON'T WORK FOR SIMPLE 3D DUE TO BACK SIDE DRAWING OVER FRONT SIDE)
-    if(depth < 3) {
-        ctx.strokeStyle = "green";
-    } else if (depth < 5) {
-        ctx.strokeStyle = "SaddleBrown";
-    } else {
-        ctx.strokeStyle = "black";
-    }
-    ctx.stroke();
-
-    // Recursive calls for sub-branches
-    drawBranch(endX, endY, length * 0.7, angle - Math.PI / 6, depth - 1); // Left branch
-    drawBranch(endX, endY, length * 0.7, angle + Math.PI / 6, depth - 1); // Right branch
-}
-
-const startX = canvas.width / 2;
-const startY = canvas.height;
-const initialLength = 100;
-const initialAngle = -Math.PI / 2; // Pointing upwards
-const maxDepth = 10;
-
-drawBranch(startX, startY, initialLength, initialAngle, maxDepth);
+/// ROTATION BY SHIFTING CAMERA ANGLE
 
 // var canvas = document.getElementById("tree-canvas");
 // var dc     = canvas.getContext("2d");
