@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/01bcd58dd0.js" crossorigin="anonymous"></script>
 
     <!-- Scripting -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Rammetto+One&display=swap" rel="stylesheet">
@@ -40,6 +40,10 @@
             </div>
         </nav>
     </header>
+
+    <section id="drawing" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <canvas id ="tree-canvas" width="800px" height="600px" style="border: 1px solid red"></canvas>
+    </section>
 
     <section id="landing">
         <div class="container container__content container--small">
