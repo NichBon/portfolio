@@ -1,7 +1,7 @@
 @use "../base/colors" as c;
 @use '../base/variables' as *;
 
-canvas {
+#tree-canvas {
     display: block;
     margin: 0 auto;
     width: 100%;

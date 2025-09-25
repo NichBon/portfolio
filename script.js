@@ -51,6 +51,10 @@ function drawBranches(branches, delay = 100) {
     function drawNext() {
         if (i >= branches.length) {
             branchQueue.length = 0;
+            const treeImage = canvas.toDataURL();
+            // const navTree = document.getElementById('nav-tree-icon');
+            // navTree.src = treeImage;
+            // navTree.style.visibility = 'visible';
             btn.classList.add('visible');
             return;
         }

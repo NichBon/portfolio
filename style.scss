@@ -7,6 +7,8 @@
 @use './style/blocks/landing';
 @use './style/blocks/skills';
 @use './style/blocks/drawing';
+@use './style/blocks/project-card';
+@use './style/blocks/contact-form';
 
 body {
     background-color: v.$color-bg;
