@@ -2,135 +2,49 @@
 @use '../base/variables' as *;
 @use "../base/colors" as c;
 
-.container--centered-80 {
-    width: 80vw;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
 .container {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 
-    &__bodycolumn {
-        width: 100%;
-        display: flex;
+    &--row {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &--column {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: 1px solid red;
-
-        .section {
-            width: 100%;
-            max-width: 800px;
-            text-align: center;
-        }
     }
 
-    &__nav {
-        justify-content: space-around;
-        padding: 1rem 2rem;
-        background-color: $color-bg;
-    }
-
-    &__link a {
-        color: $color-text;
-        font-family: $font-secondary;
-        text-decoration: none;
-        transition: $transition-fast;
-
-        &:hover {
-            color: $color-accent;
-        }
-    }
-
-    &__heading h2 {
-        font-family: $font-primary;
-        color: $color-accent;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        width: 80vw;
-        max-width: 1000px;
+    &--centered {
         margin: 0 auto;
     }
 
-    &__content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+    &--padded {
         padding: 2rem;
-        background-color: color.adjust($color-bg, $lightness: -5%);
-        width: 80vw;
-        max-width: 1000px;
-        margin: 0 auto;
     }
 
-    &__item {
+    &--heading {
+        font-family: $font-primary;
+        font-size: 2rem;
+        color: $color-accent;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    &--item {
         background-color: color.adjust($color-accent, $lightness: 10%);
         padding: 1rem;
         border-radius: $border-radius;
         color: $color-text;
     }
 
-    &__canvas {
+    &--canvas {
         padding: 1rem;
         border-radius: $border-radius;
         color: $color-text;
     }
-
-    &--row {
-        flex-direction: row;
-    }
-
-    &--column {
-        flex-direction: column;
-    }
-
-    &--small {
-        max-width: 80%;
-        margin: 0 auto;
-    }
 }
-
-// .container {
-//     display: flex;
-
-//     &__nav {
-//         justify-content: flex-end;
-//         padding: 10px;
-//     }
-
-//     &__link {
-//         justify-content: center;
-//         padding: 10px;
-//     }
-
-//     &__title {
-//         justify-content: flex-start;
-//     }
-
-//     &__heading {
-//         justify-content: center;
-//     }
-
-//     &--row {
-//         flex-direction: row;
-//     }
-
-//     &--column {
-//         flex-direction: column;
-//     }
-
-//     &__content {
-//         flex-wrap: wrap;
-//         justify-content: space-evenly;
-//         margin: 20px;
-//     }
-
-//     &__item {
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: center;
-//     }
-// }

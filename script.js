@@ -5,8 +5,9 @@ const branchQueue = [];
 const btn = document.getElementById('redraw-btn');
 
 function resizeCanvas() {
-    canvas.height = window.innerHeight * 0.7;
-    canvas.width = window.innerWidth * 0.8;
+    canvas.width = Math.min(window.innerWidth * 0.8, 800);
+    canvas.height = Math.min(window.innerHeight * 0.7, canvas.width);
+    console.log("Canvas resized:", canvas.width, canvas.height);
 }
 
 function buildBranches(x, y, length, angle, depth) {
@@ -69,7 +70,7 @@ function drawBranches(branches, delay = 100) {
     drawNext();
 }
 
-function drawTree() {
+function drawTree(startX, startY, initialLength, initialAngle, maxDepth, drawDelay) {
     buildBranches(startX, startY, initialLength, initialAngle, maxDepth);
     branchQueue.sort((a, b) => b.depth - a.depth);
     console.log(branchQueue);
@@ -80,20 +81,32 @@ document.getElementById('redraw-btn').addEventListener('click', () => {
     if (branchQueue.length === 0) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         btn.classList.remove('visible');
-        drawTree();
+        redrawTree();
     }
 });
 
-resizeCanvas();
-const startX = canvas.width / 2;
-const startY = canvas.height;
-const initialLength = canvas.height / 3.33;
-const initialAngle = -Math.PI / 2;
-const maxDepth = 10;
-const drawDelay = 25;
+function redrawTree() {
+    resizeCanvas();
+    const startX = canvas.width / 2;
+    const startY = canvas.height;
+    const initialLength = canvas.height / 3.33;
+    const initialAngle = -Math.PI / 2;
+    const maxDepth = 10;
+    const drawDelay = 25;
 
+    console.log({
+        width: canvas.width,
+        height: canvas.height,
+        startX,
+        startY,
+        initialLength
+    });
 
-drawTree();
+    drawTree(startX, startY, initialLength, initialAngle, maxDepth, drawDelay);
+}
+
+redrawTree();
+
 
 // create a collection of vectors to draw each time rendered from the camera perspective?
 // How do I convert a 3d representation to a 2d one?

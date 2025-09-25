@@ -19,137 +19,88 @@
 </head>
 
 <body>
-    <header>
-        <nav id="navigation">
-            <div class="container container__nav">
-                <div class="container container__link">
-                    <a href="#landing">Home</a>
-                </div>
-                <div class="container container__link">
-                    <a href="#about">About</a>
-                </div>
-                <div class="container container__link">
-                    <a href="#skills">Skills</a>
-                </div>
-                <div class="container container__link">
-                    <a href="#portfolio">Portfolio</a>
-                </div>
-                <div class="container container__link">
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <nav id="navigation">
+        <div class="nav-inner">
+            <a href="#landing">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-
-    <section id="drawing">
-        <div class="drawing-wrapper">
-            <div class="container container__canvas">
-                <canvas id="tree-canvas"></canvas>
-            </div>
+    <section id="drawing" class="layout-constrained">
+        <div class="container container--column container--centered">
+            <canvas id="tree-canvas"></canvas>
             <button id="redraw-btn">New Tree</button>
         </div>
     </section>
 
-    <div class="container container__bodycolumn">
-        <section id="landing">
-            <div class="container container__content container--centered-80 container--column">
-                <div class="container container__title">
-                    <h1>Nick Bonett</h1>
-                </div>
-                <div class="container container__title">
-                    <h3>Full Stack Developer</h3>
-                </div>
-            </div>
-        </section>
+    <section id="landing" class="layout-constrained">
+        <div class="container container--column container--centered">
+            <h1>Nick Bonett</h1>
+            <h3>Full Stack Developer</h3>
+        </div>
+    </section>
 
-        <section id="about">
-            <div class="container container__heading">
-                <h2>About</h2>
-            </div>
-            <div class="container container__content container--row">
-                <div class="container container__item">
-                    Ex-Educator (STEM), Problem Solver, Optimiser, Food Enjoyer.
+    <section id="about" class="layout-constrained">
+        <div class="container container--column container--centered container--padded">
+            <h2 class="container container--heading">About</h2>
+            <div class="container container--row">
+                <div class="container container--item">Ex-Educator (STEM), Problem Solver, Optimiser, Food Enjoyer.
                 </div>
-                <div class="container container__item">
-                    Bachelor of Science - Mathematical Modelling
-                </div>
-                <div class="container container__item">
-                    <!-- <form method="get" action="resume-placeholder.pdf">
-                    <button type="submit">DOWNLOAD MY RESUME</button>
-                </form> -->
+                <div class="container container--item">Bachelor of Science - Mathematical Modelling</div>
+                <div class="container container--item">
                     <a href="resume-placeholder.pdf" download>DOWNLOAD MY RESUME</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="skills">
-            <div class="container container__heading">
-                <h2>Skills</h2>
+    <section id="skills" class="layout-constrained">
+        <div class="container container--column container--centered container--padded">
+            <h2 class="container container--heading">Skills</h2>
+            <div class="container container--row">
+                <i class="fa-brands fa-html5 container--item"></i>
+                <i class="fa-brands fa-css3 container--item"></i>
+                <i class="fa-brands fa-sass container--item"></i>
+                <i class="fa-brands fa-js container--item"></i>
+                <i class="fa-brands fa-python container--item"></i>
+                <i class="fa-brands fa-react container--item"></i>
+                <div class="container container--item container--row">
+                    <i class="fa-solid fa-database"></i>
+                    <span>SQL</span>
+                </div>
+                <i class="fa-brands fa-java container--item"></i>
+                <i class="fa-brands fa-aws container--item"></i>
             </div>
+        </div>
+    </section>
 
-            <div class="container container__content container--row">
-                <div class="container container__item">
-                    <i class="fa-brands fa-html5"></i>
-                </div>
-                <div class="container container__item">
-                    <i class="fa-brands fa-css"></i>
-                </div>
-                <div class="container container__item">
-                    <i class="fa-brands fa-sass"></i>
-                </div>
-                <div class="container container__item">
-                    <i class="fa-brands fa-js"></i>
-                </div>
-                <div class="container container__item">
-                    <i class="fa-brands fa-python"></i>
-                </div>
-                <div class="container container__item">
-                    <i class="fa-brands fa-react" alt="react"></i>
-                </div>
-                <div class="container container__item container--row">
-                    <div>
-                        <i class="fa-solid fa-database" alt="'SQL"></i>
-                    </div>
-                    <div>
-                        SQL
-                    </div>
-                </div>
-                <div class="container container__item container--column">
-                    <i class="fa-brands fa-java"></i>
-                </div>
-                <div class="container container__item container--column">
-                    <i class="fa-brands fa-aws"></i>
-                </div>
+    <section id="portfolio" class="layout-constrained">
+        <div class="container container--column container--centered container--padded">
+            <h2 class="container container--heading">Portfolio</h2>
+            <div class="container container--row">
+                <div class="container container--item">[Project Placeholder]</div>
             </div>
+        </div>
+    </section>
 
-        </section>
+    <section id="contact" class="layout-constrained">
+        <div class="container container--column container--centered container--padded">
+            <h2 class="container container--heading">Contact</h2>
+            <div class="container container--row">
+                <div class="container container--item">[Contact Form Placeholder]</div>
+            </div>
+        </div>
+    </section>
 
-        <section id="portfolio">
-            <div class="container container__heading">
-                <h2>Portfolio</h2>
-            </div>
-            <div class="container container__content">
-                <div class="container container__item "></div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container container__heading">
-                <h2>Contact</h2>
-            </div>
-            <div class="container container__content">
-                <div class="container container__item"></div>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="container container__content">
-            <div class="container container__item "></div>
+    <footer class="layout-constrained">
+        <div class="container container--centered container--padded">
+            <div class="container">Nick Bonett 2025</div>
         </div>
     </footer>
-
 </body>
+
 
 </html>

@@ -1,11 +1,29 @@
 @use "../base/colors" as c;
 @use '../base/variables' as *;
+@use '../base/layouts' as *;
 
-nav {
+#navigation {
+    background-color: $color-bg;
     position: sticky;
     top: 0;
-}
+    z-index: 1000;
 
-a {
-    color: c.$text-light;
+    .nav-inner {
+        @extend .layout-constrained;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    a {
+        color: $color-text;
+        text-decoration: none;
+        font-family: $font-secondary;
+        transition: $transition-fast;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
 }

@@ -1,5 +1,6 @@
 @use './style/base/colors' as c;
 @use './style/base/variables' as v;
+@use './style/base/layouts';
 
 @use './style/blocks/containers';
 @use './style/blocks/navigation';
@@ -19,3 +20,18 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+// body,
+// html {
+//     overflow: visible;
+//     height: auto;
+// }
