@@ -170,6 +170,21 @@ i {
   margin: 0;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.social-links .social-icon {
+  font-size: 1.8rem;
+  color: #999;
+  transition: 0.2s ease;
+}
+.social-links .social-icon:hover {
+  color: #eaeaea;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -209,7 +224,7 @@ i {
   transition: 0.2s ease;
 }
 .btn--primary:hover {
-  background-color: rgb(50.4, 14.4, 0);
+  background-color: rgb(101.4, 28.9714285714, 0);
 }
 
 body {
